@@ -1,58 +1,77 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink, Link } from 'react-router-dom'
 
-
 export const Header = () => {
+    const [isOpen, setIsOpen] = useState(false)
+
+    const toggleDrawer = () => {
+        setIsOpen(!isOpen)
+    }
+
     return (
-        <div className='flex flex-row justify-around items-center bg-gray-50'>
-            <div className='p-2 w-1/4'>
-                <Link className='flex items-center text-2xl font-bold'>
-                    <img
-                        src="https://e-commerce-webapp.netlify.app/static/media/logo.f6581c63.png"
-                        alt="Awesome Ecommerce"
-                        className='w-24'
-                    />Awesome E-commerce</Link>
-            </div>
-            <nav>
-                <ul className='flex items-center'>
-                    <li className='py-2 px-1 font-semibold text-xl mx-2'><NavLink to='/' className={({isActive}) => `${isActive ? "text-blue-400" : "text-black"}`}>Home</NavLink></li>
-                    <li className='py-2 px-1 font-semibold text-xl mx-2'><NavLink to='/shop' className={({isActive}) => `${isActive ? "text-blue-400" : "text-black"}`}>Shop</NavLink></li>
-                    <li className='py-2 px-1 font-semibold text-xl mx-2'><NavLink to='categories' className={({isActive}) => `${isActive ? "text-blue-400" : "text-black"}`}>Categories</NavLink></li>
-                    <li className='py-2 px-1 font-semibold text-xl mx-2'><NavLink to='quickfind' className={({isActive}) => `${isActive ? "text-blue-400" : "text-black"}`}>Quick Find</NavLink></li>
-                </ul>
-            </nav>
-            <div className="flex items-center justify-center w-1/4">
-                <div className="relative">
-                    <span className="absolute inset-y-0 left-0 flex items-center pl-6">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                            className="w-5 h-5 text-gray-400"
-                        >
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="2"
-                                d="M21 21l-4.35-4.35M10 18a8 8 0 100-16 8 8 0 000 16z"
-                            />
-                        </svg>
-                    </span>
+        <div className="flex flex-col md:flex-row items-center justify-center bg-gray-50">
+            {/* Mobile Drawer */}
+            <div className={`fixed inset-0 bg-gray-800 bg-opacity-75 z-50 transition-transform transform ${isOpen ? 'translate-x-0' : 'translate-x-full'} md:hidden`}>
+                <div className="flex flex-col h-full p-6">
+                    <button onClick={toggleDrawer} className="text-white text-3xl mb-6">
+                        <i className="fa-solid fa-xmark"></i>
+                    </button>
                     <input
                         type="text"
-                        className="w-44 py-4 pl-16 pr-4 rounded-full shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white text-gray-800 placeholder-gray-400"
+                        className="w-full py-2 px-4 rounded-full shadow-md mb-6 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white text-gray-800 placeholder-gray-400"
                         placeholder="Search ..."
                     />
+                    <nav>
+                        <ul className="flex flex-col">
+                            <li className="py-2 text-white"><NavLink to='/' className={({ isActive }) => `${isActive ? "text-blue-400" : "text-gray-300"}`}>Home</NavLink></li>
+                            <li className="py-2 text-white"><NavLink to='/shop' className={({ isActive }) => `${isActive ? "text-blue-400" : "text-gray-300"}`}>Shop</NavLink></li>
+                            <li className="py-2 text-white"><NavLink to='categories' className={({ isActive }) => `${isActive ? "text-blue-400" : "text-gray-300"}`}>Categories</NavLink></li>
+                            <li className="py-2 text-white"><NavLink to='quickfind' className={({ isActive }) => `${isActive ? "text-blue-400" : "text-gray-300"}`}>Quick Find</NavLink></li>
+                        </ul>
+                    </nav>
                 </div>
-                <div className='bg-gray-100 rounded-full p-4 mx-6'>
-                    <i className="fa-solid fa-cart-shopping text-2xl"></i>
-                    <span className="absolute top-8 right-24 bg-pink-500 text-white rounded-full h-5 w-5 flex items-center justify-center text-xs">
-                        1
-                    </span>
+            </div>
+
+            {/* Desktop Header */}
+            <div className="w-full flex items-center justify-between md:justify-around p-2">
+                <button onClick={toggleDrawer} className="md:hidden text-2xl">
+                    <i className="fa-solid fa-bars"></i>
+                </button>
+
+                <div className='flex items-center w-full md:w-1/4 justify-center md:justify-start'>
+                    {!isOpen && (
+                        <Link className='flex items-center text-2xl font-bold'>
+                            <img
+                                src="https://e-commerce-webapp.netlify.app/static/media/logo.f6581c63.png"
+                                alt="Awesome Ecommerce"
+                                className='w-24'
+                            />
+                            <span className="hidden md:inline">Awesome E-commerce</span>
+                        </Link>
+                    )}
                 </div>
-                <div className='bg-gray-100 rounded-full p-4'>
-                    <i className="fa-regular fa-heart text-3xl"></i>
+
+                <nav className={`hidden md:flex ${isOpen ? 'hidden' : 'flex'}`}>
+                    <ul className='flex items-center justify-center'>
+                        <li className='py-2 px-1 font-semibold text-xl mx-2'><NavLink to='/' className={({ isActive }) => `${isActive ? "text-blue-400" : "text-black"}`}>Home</NavLink></li>
+                        <li className='py-2 px-1 font-semibold text-xl mx-2'><NavLink to='/shop' className={({ isActive }) => `${isActive ? "text-blue-400" : "text-black"}`}>Shop</NavLink></li>
+                        <li className='py-2 px-1 font-semibold text-xl mx-2'><NavLink to='categories' className={({ isActive }) => `${isActive ? "text-blue-400" : "text-black"}`}>Categories</NavLink></li>
+                        <li className='py-2 px-1 font-semibold text-xl mx-2'><NavLink to='quickfind' className={({ isActive }) => `${isActive ? "text-blue-400" : "text-black"}`}>Quick Find</NavLink></li>
+                    </ul>
+                </nav>
+
+                <div className={`flex items-center md:w-1/4 justify-center md:justify-end space-x-4 ${isOpen ? 'hidden' : 'flex'}`}>
+                    <div className='bg-gray-100 rounded-full p-4 relative'>
+                        <i className="fa-solid fa-cart-shopping text-2xl"></i>
+                        <span className="absolute top-0 right-0 bg-pink-500 text-white rounded-full h-5 w-5 flex items-center justify-center text-xs">
+                            1
+                        </span>
+                    </div>
+                    {!isOpen && (
+                        <div className='bg-gray-100 rounded-full p-4 hidden md:flex'>
+                            <i className="fa-regular fa-heart text-3xl"></i>
+                        </div>
+                    )}
                 </div>
             </div>
         </div>
