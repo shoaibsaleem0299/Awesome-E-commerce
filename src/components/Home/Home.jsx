@@ -1,5 +1,10 @@
-<section className="py-28">
-      <div className="bg-[url('../Images/bg-1.png')] w-[95%] mx-auto px-10 pt-32 rounded-[70px]">
+import React from 'react';
+import image from '../../../public/assets/images/bg-1.png'
+
+const Home = () => {
+  return (
+    <section >
+      <div className="bg-[url('../../../public/assets/images/bg-1.png')] w-[95%] h-screen mx-auto px-10 pt-32 rounded-[70px]">
         {/* Row 1 */}
         <div className="flex flex-wrap">
           {/* Column 1 */}
@@ -37,3 +42,7 @@
         </div>
       </div>
     </section>
+  );
+};
+
+export default Home;
