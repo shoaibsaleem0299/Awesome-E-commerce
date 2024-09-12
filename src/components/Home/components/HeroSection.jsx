@@ -11,7 +11,7 @@ export const HeroSection = () => {
                     Empower your shopping experience with seamless browsing, exclusive deals, and fast, secure checkout <br />
                     <span className="text-blue-500">welcome to the future of online shopping!</span>
                 </p>
-                <button className="bg-blue-500 text-white lg:font-bold md:font-light py-3 px-6 rounded-full hover:bg-white hover:text-blue-900 transition-all">
+                <button className="bg-blue-500 text-white lg:font-bold md:font-light py-3 px-6 rounded-full hover:bg-white hover:text-blue-900 hover:duration-700">
                     Explore Now
                     <i className="fas fa-arrow-right-from-bracket ml-3 bg-blue-700 text-white p-3 rounded-full hover:bg-white hover:text-blue-900 transition-all"></i>
                 </button>
