@@ -9,8 +9,8 @@ export const Header = () => {
     }
 
     return (
-        <div className="flex flex-col md:flex-row items-center justify-center">
-            {/* Mobile Drawer */}
+        <div className="absolute top-0 w-full bg-gray-300 flex flex-col md:flex-row items-center justify-center">
+            {/* Mobile Drawer */} 
             <div className={`fixed inset-0 bg-gray-800 bg-opacity-75 z-50 transition-transform transform ${isOpen ? 'translate-x-0' : 'translate-x-full'} md:hidden`}>
                 <div className="flex flex-col h-full p-6">
                     <button onClick={toggleDrawer} className="text-white text-3xl mb-6">
