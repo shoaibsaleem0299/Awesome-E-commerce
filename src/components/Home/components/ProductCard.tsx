@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 function ProductCard({productDetail}) {
     const {imageUrl, title, price, rating, cutPrice = 0, favorite = false} = productDetail;
-    console.log("this is error");
     const [favorites, isFavorite] = useState(favorite);
     const onClick = () => {
         isFavorite(!favorites)
