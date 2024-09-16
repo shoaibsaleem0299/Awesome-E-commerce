@@ -9,7 +9,7 @@ function ProductCard({productDetail}) {
         isFavorite(!favorites)
     }
     return (
-        <div className="relative m-10 w-full max-w-xs overflow-hidden rounded-lg bg-white shadow-md">
+        <div className="relative my-10 w-[95%] lg:w-full max-w-xs overflow-hidden rounded-lg bg-white shadow-md">
             <Link to="#">
                 <img className="h-60 rounded-t-lg object-cover" src={imageUrl} alt="product image" />
             </Link>
