@@ -11,6 +11,7 @@ const Home = () => {
   let Categories = Data.Categories.slice(0,4);
 
   return (
+    <>
     <div className='bg-gray-100 py-4'>
       <HeroSection />
       <h1 className='text-center text-2xl lg:text-4xl font-extrabold mb-8 py-2 w-[95%] lg:w-[25%] mx-auto rounded-3xl bg-gray-50 shadow-md'>Categories </h1>
@@ -34,6 +35,7 @@ const Home = () => {
       </div>
       <div className='text-center'><button type="button" className="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">View More</button></div>
     </div>
+    </>
   );
 };
 

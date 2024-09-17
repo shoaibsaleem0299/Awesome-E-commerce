@@ -2,12 +2,13 @@ import React, { useState } from 'react'
 import { HeroTitle } from '../Shop/components/Title'
 import { Data } from '../../../public/assets/data/SampleData';
 import ProductCard from '../Home/components/ProductCard';
+import { CategorySection } from '../Home/components/CategorySection';
 
 export const Categories = () => {
 
-  const products = Data.products;
+  const products = Data.Categories;
   const [currectPage, setCurrentPage] = useState(1);
-  const postPerPage = 9;
+  const postPerPage = 12;
   const totalPages = Math.ceil(products.length / postPerPage);
   const indexOfLastProduct = postPerPage * currectPage;
   const indexOfFirstProduct = indexOfLastProduct - postPerPage;
@@ -28,9 +29,9 @@ export const Categories = () => {
     <div className='bg-gray-100'>
       <HeroTitle title="Categories" />
       <h1 className='text-center text-2xl lg:text-4xl font-extrabold py-2 w-[90%] lg:w-[25%] mx-[4.5%] rounded-lg bg-gray-50 shadow-md'>Categories For You</h1>
-      <div className='w-[95%] mx-auto grid justify-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 '>
+      <div className='w-[95%] mx-auto pt-8 grid justify-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-4 '>
         {productsPerPage.map((product, index) => (
-          <ProductCard key={index} productDetail={product} />
+          <CategorySection  key={index} categories={product}/>
         ))}
       </div>
       <div className="flex flex-col items-center py-6">
