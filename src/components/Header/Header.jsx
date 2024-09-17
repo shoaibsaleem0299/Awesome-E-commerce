@@ -26,8 +26,8 @@ export const Header = () => {
                         <ul className="flex flex-col">
                             <li className="py-2 text-white"><NavLink to='/' className={({ isActive }) => `${isActive ? "text-blue-400" : "text-gray-300"}`}>Home</NavLink></li>
                             <li className="py-2 text-white"><NavLink to='/shop' className={({ isActive }) => `${isActive ? "text-blue-400" : "text-gray-300"}`}>Shop</NavLink></li>
-                            <li className="py-2 text-white"><NavLink to='categories' className={({ isActive }) => `${isActive ? "text-blue-400" : "text-gray-300"}`}>Categories</NavLink></li>
-                            <li className="py-2 text-white"><NavLink to='quickfind' className={({ isActive }) => `${isActive ? "text-blue-400" : "text-gray-300"}`}>Quick Find</NavLink></li>
+                            <li className="py-2 text-white"><NavLink to='/categories' className={({ isActive }) => `${isActive ? "text-blue-400" : "text-gray-300"}`}>Categories</NavLink></li>
+                            <li className="py-2 text-white"><NavLink to='/login' className={({ isActive }) => `${isActive ? "text-blue-400" : "text-gray-300"}`}>Login</NavLink></li>
                         </ul>
                     </nav>
                 </div>
@@ -56,8 +56,8 @@ export const Header = () => {
                     <ul className='flex items-center justify-center'>
                         <li className='py-2 px-1 font-semibold text-xl mx-2'><NavLink to='/' className={({ isActive }) => `${isActive ? "text-blue-400" : "text-black"}`}>Home</NavLink></li>
                         <li className='py-2 px-1 font-semibold text-xl mx-2'><NavLink to='/shop' className={({ isActive }) => `${isActive ? "text-blue-400" : "text-black"}`}>Shop</NavLink></li>
-                        <li className='py-2 px-1 font-semibold text-xl mx-2'><NavLink to='categories' className={({ isActive }) => `${isActive ? "text-blue-400" : "text-black"}`}>Categories</NavLink></li>
-                        <li className='py-2 px-1 font-semibold text-xl mx-2'><NavLink to='quickfind' className={({ isActive }) => `${isActive ? "text-blue-400" : "text-black"}`}>Quick Find</NavLink></li>
+                        <li className='py-2 px-1 font-semibold text-xl mx-2'><NavLink to='/categories' className={({ isActive }) => `${isActive ? "text-blue-400" : "text-black"}`}>Categories</NavLink></li>
+                        <li className='py-2 px-1 font-semibold text-xl mx-2'><NavLink to='/login' className={({ isActive }) => `${isActive ? "text-blue-400" : "text-black"}`}>Login</NavLink></li>
                     </ul>
                 </nav>
 

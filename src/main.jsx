@@ -5,8 +5,10 @@ import './index.css'
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
 import {Shop} from './components/Shop/Shop.jsx'
 import { Categories } from './components/Categories/Categories.jsx'
-import { Find } from './components/Find/Find.jsx'
+import { Login } from './components/Login/Login.jsx'
 import Home from './components/Home/Home.jsx'
+import SignUp from './components/SignUp/SignUp.jsx'
+import ForgotPassword from './components/Forgot/Forgot.jsx'
 
 
 const router = createBrowserRouter(
@@ -15,7 +17,9 @@ const router = createBrowserRouter(
       <Route path='' element={<Home/>}></Route>
       <Route path='/shop' element={<Shop/>}></Route>
       <Route path='/categories' element={<Categories/>}></Route>
-      <Route path='/quickfind' element={<Find/>}></Route>
+      <Route path='/login' element={<Login/>}></Route>
+      <Route path='/signup' element={<SignUp/>}></Route>
+      <Route path='/forgotpassword' element={<ForgotPassword/>}></Route>
     </Route>
     
   )
