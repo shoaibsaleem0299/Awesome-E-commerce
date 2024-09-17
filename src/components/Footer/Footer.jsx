@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import AppConstants from '../../../public/assets/constants/app_constant'
 
 
 export const Footer = () => {
@@ -11,7 +12,7 @@ export const Footer = () => {
         <div className="sm:flex sm:items-center sm:justify-between">
           <Link className='flex items-center text-2xl font-bold'>
             <img
-              src="https://e-commerce-webapp.netlify.app/static/media/logo.f6581c63.png"
+              src = {AppConstants.logoImageUrl}
               alt="Awesome Ecommerce"
               className='w-32'
             />
