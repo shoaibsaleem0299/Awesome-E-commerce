@@ -9,6 +9,7 @@ import { Login } from './components/Login/Login.jsx'
 import Home from './components/Home/Home.jsx'
 import SignUp from './components/SignUp/SignUp.jsx'
 import ForgotPassword from './components/Forgot/Forgot.jsx'
+import { ShoppingCart } from './components/Cart/ShoppingCart.jsx'
 
 
 const router = createBrowserRouter(
@@ -20,6 +21,7 @@ const router = createBrowserRouter(
       <Route path='/login' element={<Login/>}></Route>
       <Route path='/signup' element={<SignUp/>}></Route>
       <Route path='/forgotpassword' element={<ForgotPassword/>}></Route>
+      <Route path='/cart' element={<ShoppingCart/>}></Route>
     </Route>
     
   )

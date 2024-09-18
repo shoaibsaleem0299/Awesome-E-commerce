@@ -11,7 +11,7 @@ export const Header = () => {
 
     return (
         <div className="absolute top-0 w-full bg-gray-300 flex flex-col md:flex-row items-center justify-center">
-            {/* Mobile Drawer */} 
+            {/* Mobile Drawer */}
             <div className={`fixed inset-0 bg-gray-800 bg-opacity-75 z-50 transition-transform transform ${isOpen ? 'translate-x-0' : 'translate-x-full'} md:hidden`}>
                 <div className="flex flex-col h-full p-6">
                     <button onClick={toggleDrawer} className="text-white text-3xl mb-6">
@@ -62,16 +62,20 @@ export const Header = () => {
                 </nav>
 
                 <div className={`flex items-center md:w-1/4 justify-center md:justify-end space-x-4 ${isOpen ? 'hidden' : 'flex'}`}>
-                    <div className='bg-gray-100 rounded-full p-4 relative'>
-                        <i className="fa-solid fa-cart-shopping text-2xl"></i>
-                        <span className="absolute top-0 right-0 bg-pink-500 text-white rounded-full h-5 w-5 flex items-center justify-center text-xs">
-                            1
-                        </span>
-                    </div>
-                    {!isOpen && (
-                        <div className='bg-gray-100 rounded-full p-4 hidden md:flex'>
-                            <i className="fa-regular fa-heart text-3xl"></i>
+                    <Link to="/cart">
+                        <div className='bg-gray-100 rounded-full p-4 relative'>
+                            <i className="fa-solid fa-cart-shopping text-2xl"></i>
+                            <span className="absolute top-0 right-0 bg-pink-500 text-white rounded-full h-5 w-5 flex items-center justify-center text-xs">
+                                1
+                            </span>
                         </div>
+                    </Link>
+                    {!isOpen && (
+                        <Link>
+                            <div className='bg-gray-100 rounded-full p-4 hidden md:flex'>
+                                <i className="fa-regular fa-heart text-3xl"></i>
+                            </div>
+                        </Link>
                     )}
                 </div>
             </div>
