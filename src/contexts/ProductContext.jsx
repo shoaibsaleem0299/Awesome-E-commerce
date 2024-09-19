@@ -2,9 +2,11 @@ import { createContext, useEffect, useState } from "react";
 
 const productContext = createContext();
 
+export const useProductContext = () => useContext(productContext);
+
 export const productContextProvider = ({childern}) => {
 
-    const [products, setProducts] = useState([]);
+    const [products, setProducts] = useState({products : []});
 
     useEffect(()=>{
         const fetchProducts = async () => {
@@ -20,8 +22,9 @@ export const productContextProvider = ({childern}) => {
     },[]);
 
     return (
-        <productContext.Provider>
+        <productContext.Provider value={{products}}>
             {childern}
         </productContext.Provider>
     );
+
 }

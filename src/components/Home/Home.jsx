@@ -1,13 +1,14 @@
-import React from 'react';
 import { HeroSection } from './components/HeroSection';
 import { CategorySection } from './components/CategorySection';
 import ProductCard from './components/ProductCard';
 import { Data } from '../../../public/assets/data/SampleData';
-// import {Data} from '/assets/data/SampleData.js'
+import {  useProductContext } from '../../contexts/ProductContext';
 
 
 const Home = () => {
-  const products = Data.products;
+
+    const { products } = useProductContext;
+    const productResponse = products.products;
   let Categories = Data.Categories.slice(0,4);
 
   return (
@@ -29,7 +30,7 @@ const Home = () => {
       </div>
       <h1 className='text-center text-2xl lg:text-4xl font-extrabold mt-16 mb-10  py-2 w-[95%] lg:w-[25%] mx-auto rounded-3xl bg-gray-50 shadow-md'>Products For You</h1>
       <div className='w-[95%] mx-auto grid justify-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-4 '>
-        {products.map((product, index) => (
+        {productResponse.map((product, index) => (
           <ProductCard key={index} productDetail={product} />
         ))}
       </div>

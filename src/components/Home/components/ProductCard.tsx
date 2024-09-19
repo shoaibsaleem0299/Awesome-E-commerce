@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import AppFucntions from '../../../../public/assets/ui_functions/ui_fuctions';
 
 function ProductCard({productDetail}) {
-    const {imageUrl, title, price, rating, cutPrice = 0, favorite = false} = productDetail;
+    const {id, thumbnail, title, price, rating, cutPrice = 0, favorite = false} = productDetail;
     const [favorites, isFavorite] = useState(favorite);
     const onClick = () => {
         isFavorite(!favorites)
@@ -14,7 +14,7 @@ function ProductCard({productDetail}) {
             <Link to="#">
                 <img 
                 className="h-60 rounded-t-lg object-cover" 
-                src={imageUrl} 
+                src={thumbnail} 
                 alt="product image" 
                 onError={AppFucntions.handleErrorImage}
                 />
