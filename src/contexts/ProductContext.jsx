@@ -1,30 +1,30 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
-const productContext = createContext();
+const productContext = createContext(); // Create the context
 
+// Hook to use the product context
 export const useProductContext = () => useContext(productContext);
 
-export const productContextProvider = ({childern}) => {
+// Context provider component
+export const ProductContextProvider = ({ children }) => {
+    const [products, setProducts] = useState([]); // Initialize products with an empty array
 
-    const [products, setProducts] = useState({products : []});
-
-    useEffect(()=>{
+    useEffect(() => {
         const fetchProducts = async () => {
-            try { 
+            try {
                 const response = await fetch("https://dummyjson.com/products");
                 const data = await response.json();
-                setProducts(data);
-            }catch (e) {
-                console.error("Error while fatching product : ", e);
+                setProducts(data.products); // Update the state with the fetched products
+            } catch (e) {
+                console.error("Error while fetching products: ", e);
             }
-        }
+        };
         fetchProducts();
-    },[]);
+    }, []);
 
     return (
-        <productContext.Provider value={{products}}>
-            {childern}
+        <productContext.Provider value={{ products }}>
+            {children}
         </productContext.Provider>
     );
-
-}
+};

@@ -13,7 +13,7 @@ function ProductCard({productDetail}) {
         <div className="relative my-10 w-[95%] lg:w-full max-w-xs overflow-hidden rounded-lg bg-white shadow-md">
             <Link to="#">
                 <img 
-                className="h-60 rounded-t-lg object-cover" 
+                className="h-60 rounded-t-lg object-cover text-center" 
                 src={thumbnail} 
                 alt="product image" 
                 onError={AppFucntions.handleErrorImage}

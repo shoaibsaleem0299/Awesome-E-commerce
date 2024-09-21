@@ -10,7 +10,7 @@ import Home from './components/Home/Home.jsx'
 import SignUp from './components/SignUp/SignUp.jsx'
 import ForgotPassword from './components/Forgot/Forgot.jsx'
 import { ShoppingCart } from './components/Cart/ShoppingCart.jsx'
-import { productContextProvider } from './contexts/ProductContext.jsx'
+import { ProductContextProvider } from './contexts/ProductContext.jsx'
 
 
 const router = createBrowserRouter(
@@ -30,8 +30,8 @@ const router = createBrowserRouter(
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <productContextProvider>
+    <ProductContextProvider>
       <RouterProvider router={router} />
-    </productContextProvider>
+    </ProductContextProvider>
   </StrictMode>,
 )

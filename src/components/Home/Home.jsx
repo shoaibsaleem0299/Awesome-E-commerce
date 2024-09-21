@@ -7,8 +7,8 @@ import {  useProductContext } from '../../contexts/ProductContext';
 
 const Home = () => {
 
-    const { products } = useProductContext;
-    const productResponse = products.products;
+    const { products } = useProductContext();
+    const productResponse = products;
   let Categories = Data.Categories.slice(0,4);
 
   return (
