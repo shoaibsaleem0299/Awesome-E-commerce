@@ -11,7 +11,7 @@ function ProductCard({productDetail}) {
    
     return (
         <div className="relative my-10 w-[95%] lg:w-full max-w-xs overflow-hidden rounded-lg bg-white shadow-md">
-            <Link className='flex justify-center bg-gray-200' to="#">
+            <Link className='flex justify-center bg-gray-200' to={`/product/${id}`}>
                 <img 
                 className="h-60" 
                 src={thumbnail} 
@@ -21,7 +21,7 @@ function ProductCard({productDetail}) {
             </Link>
             <span className="absolute top-0 left-0 w-28 translate-y-4 -translate-x-6 -rotate-45 bg-black text-center text-sm text-white">Sale</span>
             <div className="mt-4 px-5 pb-5">
-                <Link to="#">
+                <Link to={`/product/${id}`}>
                     <h5 className="text-xl font-bold tracking-tight text-slate-900">{title}</h5>
                 </Link>
                 <div className="mt-2.5 mb-5 flex items-center">

@@ -11,6 +11,7 @@ import SignUp from './components/SignUp/SignUp.jsx'
 import ForgotPassword from './components/Forgot/Forgot.jsx'
 import { ShoppingCart } from './components/Cart/ShoppingCart.jsx'
 import { ProductContextProvider } from './contexts/ProductContext.jsx'
+import ProductOverview from './components/ProductOverview/ProductOverview.jsx'
 
 
 const router = createBrowserRouter(
@@ -23,6 +24,7 @@ const router = createBrowserRouter(
       <Route path='/signup' element={<SignUp />}></Route>
       <Route path='/forgotpassword' element={<ForgotPassword />}></Route>
       <Route path='/cart' element={<ShoppingCart />}></Route>
+      <Route path='/product/:id' element={<ProductOverview />}></Route>
     </Route>
 
   )
