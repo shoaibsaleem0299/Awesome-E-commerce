@@ -8,8 +8,7 @@ import {  useProductContext } from '../../contexts/ProductContext';
 const Home = () => {
 
     const { products } = useProductContext();
-    const productResponse = products;
-  let Categories = Data.Categories.slice(0,4);
+    let Categories = Data.Categories.slice(0,4);
 
   return (
     <>
@@ -30,7 +29,7 @@ const Home = () => {
       </div>
       <h1 className='text-center text-2xl lg:text-4xl font-extrabold mt-16 mb-10  py-2 w-[95%] lg:w-[25%] mx-auto rounded-3xl bg-gray-50 shadow-md'>Products For You</h1>
       <div className='w-[95%] mx-auto grid justify-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-4 '>
-        {productResponse.map((product, index) => (
+        {products.map((product, index) => (
           <ProductCard key={index} productDetail={product} />
         ))}
       </div>

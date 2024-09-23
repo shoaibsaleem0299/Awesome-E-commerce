@@ -2,10 +2,12 @@ import React, { useState } from 'react'
 import { HeroTitle } from './components/Title'
 import { Data } from '../../../public/assets/data/SampleData';
 import ProductCard from '../Home/components/ProductCard';
+import { useProductContext } from '../../contexts/ProductContext';
 
 
 export const Shop = () => {
-  const products = Data.products;
+  const {products} = useProductContext();
+
   const [currectPage, setCurrentPage] = useState(1);
   const postPerPage = 9;
   const totalPages = Math.ceil(products.length / postPerPage);
@@ -23,6 +25,7 @@ export const Shop = () => {
       setCurrentPage(currectPage + 1);
     }
   }
+
 
   return (
     <div className='bg-gray-100 '>

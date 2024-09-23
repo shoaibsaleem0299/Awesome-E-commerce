@@ -11,9 +11,9 @@ function ProductCard({productDetail}) {
    
     return (
         <div className="relative my-10 w-[95%] lg:w-full max-w-xs overflow-hidden rounded-lg bg-white shadow-md">
-            <Link to="#">
+            <Link className='flex justify-center bg-gray-200' to="#">
                 <img 
-                className="h-60 rounded-t-lg object-cover flex justify-center" 
+                className="h-60" 
                 src={thumbnail} 
                 alt="product image" 
                 onError={AppFucntions.handleErrorImage}
